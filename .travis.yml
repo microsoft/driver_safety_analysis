@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.6"
+install: 
+  - pip install --upgrade databricks-cli
+script: 
+  - python -c "dummy=0"
+deploy:
+  - provider: script
+    script: bash databricks/deploy/1_configure/deploy_job.sh -r "westeurope" -t $DATABRICKS_TOKEN -j "*.config.json"

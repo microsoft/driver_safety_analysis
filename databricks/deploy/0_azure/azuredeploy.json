@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "deployNs": {
+            "type": "string"
+        },
+        "dbricksWorkspaceName": {
+            "defaultValue": "[concat(parameters('deployNs'), 'dbricks', uniqueString(resourceGroup().id))]",
+            "type": "string"
+        },
+        "dbricksLocation": {
+            "defaultValue": "[resourceGroup().location]",
+            "type": "string",
+            "metadata": {
+                "description": "Key Vault secret name which references the AD Service Principal password"
+            }
+        },
+        "dbricksTier": {
+            "defaultValue": "premium",
+            "type": "string",
+            "allowedValues": [
+                "premium",
+                "standard"
+            ]
+        }
+    },
+    "variables": {
+        "managedResourceGroupId": "[concat(subscription().id, '/resourceGroups/', variables('managedResourceGroupName'))]",
+        "managedResourceGroupName": "[concat('databricks-rg-', parameters('dbricksWorkspaceName'), '-', uniqueString(parameters('dbricksWorkspaceName'), resourceGroup().id))]"        
+    },
+    "resources": [
+        {
+            "apiVersion": "2018-04-01",
+            "location": "[parameters('dbricksLocation')]",
+            "name": "[parameters('dbricksWorkspaceName')]",
+            "tags": {
+                "displayName": "Databricks Workspace"
+            },
+            "sku": {
+                "name": "[parameters('dbricksTier')]"
+            },
+            "properties": {
+                "ManagedResourceGroupId": "[variables('managedResourceGroupId')]"
+            },
+            "type": "Microsoft.Databricks/workspaces"
+        }
+       
+    ],
+    "outputs": {
+        "dbricksWorkspaceName": {
+            "value": "[parameters('dbricksWorkspaceName')]",
+            "type": "string"
+        },
+        "dbricksLocation": {
+            "value": "[parameters('dbricksLocation')]",
+            "type": "string"
+        }
+    }
+}
