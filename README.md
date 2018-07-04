@@ -5,9 +5,9 @@ It contains a sample of the dataset as well as Python (pandas) and PySpark imple
 It's best first to go over the python notebook as it contains more details, and then to the pyspark notebook to see the same implementation on pyspark.
 
 ### Notebooks:
-- Python: https://github.com/omri374/driver_behavior_analysis/blob/master/Driver%20safety%20estimation%20-%20pandas.ipynb
+- Python: https://github.com/Microsoft/driver_safety_analysis/blob/master/Driver%20safety%20estimation%20-%20pandas.ipynb
 
-- PySpark: https://github.com/omri374/driver_behavior_analysis/blob/master/Driver%20safety%20estimation%20-%20pyspark.ipynb
+- PySpark: https://github.com/Microsoft/driver_safety_analysis/blob/master/Driver%20safety%20estimation%20-%20pyspark.ipynb
 
 ### Requirements
 - For the python notebook:
