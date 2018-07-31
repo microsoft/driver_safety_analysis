@@ -1,6 +1,9 @@
 # Driver behavior analysis
 This code repository holds the jupyter notebooks for estimating driver safety on Pointer's dataset. 
 It contains a sample of the dataset as well as Python (pandas) and PySpark implementations of the process.
+This is an experimental project.
+
+A code story describing this solution can be found in: https://www.microsoft.com/developerblog/2018/07/30/unsupervised-driver-safety-estimation-at-scale/
 
 It's best first to go over the python notebook as it contains more details, and then to the pyspark notebook to see the same implementation on pyspark.
 
@@ -18,7 +21,7 @@ It's best first to go over the python notebook as it contains more details, and 
   - Python > 3.5
   - **packages**: numpy (1.14.0 and above), scipy, pandas, seaborn, matplotlib, pyspark
 
-A code story presenting the entire flow will be uploaded to https://www.microsoft.com/developerblog
+
 
 ### Deployment
 When deploying this sample solution you should take note of a few resources provided in the repository:
