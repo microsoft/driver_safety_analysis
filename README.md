@@ -1,5 +1,6 @@
 # Driver behavior analysis
-This code repository holds the jupyter notebooks for estimating driver safety on Pointer's dataset. 
+This code repository holds the jupyter notebooks for estimating driver safety on Pointer's dataset, as well as the deployment scripts for deployment on Azure.
+
 It contains a sample of the dataset as well as Python (pandas) and PySpark implementations of the process.
 This is an experimental project.
 
